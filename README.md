@@ -4,24 +4,47 @@
 
 ---
 
-## Compilar e executar:
 
-> Para compilar digite o seguinte comando
-```
-npm install
-```
+<h1 id="summary">Sumário</h1>
 
-> Para executar o servidor
-```
-npm start
-```
+* **[1. Resumo do Documento de Design do Jogo](#resume)**
 
-- E para abrir o jogo, basta acessar o home.html no seu navegador apartir do [link](https://localhost:3000)
-- Bom jogo!
+* **[2. História](#history)**
+    * Personagens
+    * Jogadores
+
+* **[3. Configuração](#config)**
+    * Características
+
+* **[4. Narrativa](#narrative)**
+
+* **[5. Jogabilidade](#gameplay)**
+    * Evento principal
+    * Mecânicas
+    * Dinâmicas
+
+* **[6. UI/Controles do Jogo](#ui)**
+
+* **[7. Design de Níveis](#level)**
+
+* **[8. Arte](#art)**
+    * Visual
+    * Áudio
+
+* **[9. Plano de Desenvolvimento & Pilares de Design](#design)**
+    * Protótipo
+    * Equipe
+
+* **[10. Fases do desenvolvimento](#dev)**
+    * Cronograma
+    * Milestones
+
+* **[11. Compilar e executar](#compile)**
+
 
 ---
 
-## Resumo do Documento de Design do Jogo
+<h1 id="resume">Resumo do Documento de Design do Jogo</h1>
 
 > Para melhores soluções, vamos nos concentrar em responder algumas perguntas sobre isso...
 
@@ -35,7 +58,7 @@ npm start
 
 ---
 
-## História
+<h1 id="history">História</h1>
 
 > Já tentou lembrar de uma palavra e esteva na ponta da língua? Quem nunca tentou mudar um letra de cada vez para acertar a palavra certa? Agora você pode jogar e testar seus conhecimentos em inglês! Desafie seus amigos quem consegue formar as palavras mais rápido! 
 
@@ -51,31 +74,35 @@ npm start
 
 - **Perfil**
 
-> Cadastramento por db, ou auth0(hotmail, facebook, gmail)
+> Cadastramento por db, mais tarde auth0(hotmail, facebook, gmail)
 
 - **Social**
-- Ranking Geral
-    > Um ranking para todos os jogadores de uma categoria
-- Ranking Local
-    > Um ranking para um partida local entre jogadores convidados
-
+    - Ranking Geral
+        > Um ranking para todos os jogadores de uma categoria
+    - Ranking Local
+        > Um ranking para um partida local entre jogadores convidados
+    
 ---
 
-## Configuração
+<h1 id="config">Configuração</h1>
+
 
 ### Características
 
 - **Gênero**
+    > Puzzle, Casual
 - **Plataforma**
+    > PC, iOS, Android, Mobile
 - **Público Alvo**
+    > Estudantes entre fundamental e médio
 - **Duração Estimada**
+    > 15~30 minutos, para todas as fases
 - **Requisitos Mínimos:**
-    > Móveis ou Desktop. Web responsivo, Android, IOS, Windows, Linux.
-    > Mouse e teclado; Touchscreen; Pesquisar recursos de acessibilidade
+    > Mouse e teclado; Touchscreen; **Pesquisar recursos de acessibilidade
 
 ---
 
-## Narrativa
+<h1 id="narrative">Narrativa</h1>
 
 - *Objetivo final*
 
@@ -87,29 +114,36 @@ npm start
 
 ---
 
-## Jogabilidade
+<h1 id="gameplay">Jogabilidade</h1>
+
 
 ### Loop Principal
 
-> O evento principal do jogo.
+O evento principal do jogo.
+
+> **Acertar palavaras até completar todas letras do alfabeto. Primeiro com 3, depois 4, até 5**
 
 ### Mecânicas
 
-> Regras e ações básicas.
+Regras e ações básicas.
+
+> **Trocar apenas uma letra por vez, ou inverter a palvra**
 
 ### Dinâmicas
 
-> O comportamento emergente que surge da jogabilidade, quando as mecânicas são colocadas em uso.
+O comportamento emergente que surge da jogabilidade, quando as mecânicas são colocadas em uso.
+
+> **A**
 
 ---
 
-## UI/Controles do Jogo
+<h1 id="ui">UI/Controles do Jogo</h1>
 
 ### Comandos básicos
 
 ---
 
-## Design de Níveis
+<h1 id="level">Design de Níveis</h1>
 
 > Descrição sobre como deve ficar as cenas dentro do jogo
 
@@ -118,12 +152,14 @@ npm start
 
 ### Cenário 2
 
+
 ---
 
-## Arte
+<h1 id="art">Arte</h1>
 
-> Link para Bíblia de Desenhos
-> Descrições básicas, por enquanto
+> Descrições básicas, protótipos e ideias de arte
+
+## Visual
 
 ### Avatar do Usuário
 
@@ -131,7 +167,6 @@ npm start
 
 > Imagens de referência para cada cena, à adicionar na próxima etapa...
 
----
 
 ## Áudio
 
@@ -143,27 +178,49 @@ npm start
 
 ---
 
-## Pilares de Design
-> Definir o sentido dos piles, quais deles estão relacionados a quais áreas do desenvolvimento, e estrategicamente combinar a equipe com os pilares e funções
+<h1 id="design">Plano de Desenvolvimento & Pilares de Design</h1>
 
-- **Tecnológico**
-
-- **Design**
-
-- **Pedagógico**
-
-- **Psicológico**
-
----
-
-## Plano de Desenvolvimento
+> Definir o sentido dos pilares, quais deles estão relacionados a quais áreas do desenvolvimento, e estrategicamente combinar a equipe com tarefas e funções
 
 ### Protótipo
 
 > Projeto da Interface
 
-[Imagem](./prototipo.jpeg)
-"Podemos começar com a imagem que Vinicius fez lá da Explanação, mas ainda podemos melhorar mais"
+<img width="50%" src="./prototipo.png" alt_text="Prévia do Protótipo"/>
+
+"Primeiro prototipo do projeto"
+
+### Equipe
+
+> Definam suas aspirações e áreas de contribuição
+
+- **Carlo** - **Tecnologia** 
+    - **Desenvolvedor**
+        - Tecnologia de Front-end
+        - Auxiliar no desenvolvimento de design
+        - Assistente de desenvolvedor de servidor
+        - Focar em semiótica visual e experiência do usuário
+        - Assistente de Direção e Produção (Documentação)
+        
+
+- **Vinícius** - **Design**
+    - **Game designer**
+        - Criar um design atraente, identidade e logotipo
+        - Diretor de Design e Marketing 
+  
+
+- **Thiago** - **Psicologia**
+    - **Desenvolvedor Estrutural(Exemplo)**
+        - Definir tecnologias de servidor e banco de dados
+        
+
+- **Vitor** - **Pedagogia**
+    - **Produtor(Exemplo)**
+        - Feedback e melhorias contínuas
+        
+---
+
+<h1 id="dev">Fases do desenvolvimento</h1>
 
 ### Plano de Ação:
 
@@ -171,15 +228,67 @@ npm start
 > Recursos humanos: quem é responsável por fazer o quê (papel na equipe);
 > Recursos tecnológicos: quais as tecnologias a serem usadas no desenvolvimento.
 
-### Equipe
 
-> Acho que precisamos definir mais tarefas pra dividir melhor nosso time
+## Cronograma
 
-- **Game designer**
-- **Desenvolvedor**
-- **Ilustrador / Concept**
-- **Produtor**
+- Data Inicial: 20/12
+- Data Prazo Final: 20/01
 
-### Cronograma
+> 4 Semanas para entrega final e apresentação
 
-### Milestones
+## Milestones
+
+> Fases de definição do projeto
+
+### Projeto Protótipo / Primeiro protótipo funcional
+
+- Discussão de funcionalidades básicas
+- Discussão de servidor local
+- Discussão de database 
+- Discussão de design básico
+- Discussão de carregamento de imagens
+
+### Projeto Alpha / Fases de Testes
+
+- Definição de funcionalidades básicas
+- Definição de servidor local
+- Definição de database 
+- Definição de design básico
+- Definição de carregamento de imagens
+
+
+### Projeto Definitivo / Conclusão de implementações
+
+- Implementação básica de todas fases
+- Implementação básica de servidor na nuvem(vercel, github pages)
+- Implementação de registro de usuários
+- Implementação de design final
+- Implementação de API/IA para recursos visuais
+
+### Projeto Beta / Fases de Lançamento
+
+- Teste e verificação de erros no cliente/servidor
+- Implementação final de servidor e database
+- Garantir segurança da database e usuários
+- Garantir recursos de acessibilidade
+- Gerenciamento de erros de custos computacionais das API/IA
+
+
+---
+
+<h1 id="compile">Compilar e executar</h1>
+
+> Para compilar digite o seguinte comando
+```
+npm install
+```
+
+> Para executar o servidor
+```
+npm start
+```
+
+- E para abrir o jogo, basta acessar o home.html no seu navegador apartir do [localhost](https://localhost:3000), por enquanto...
+- Bom jogo!
+
+[Voltar ao topo](#summary)
