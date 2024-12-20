@@ -123,9 +123,15 @@ O evento principal do jogo.
 
 > **Acertar palavaras até completar todas letras do alfabeto. Primeiro com 3, depois 4, até 5**
 
+Ao abrir o jogo, o jogador encontrará 3 linhas sublinhadas já preenchidas com as letras 'Q', 'A' e 'T'. O jogador poderá, então, modificar alguma dessas letras afim de formar uma nova palavra ou selecionar a randomização dessas 3 letras. A cada palavra formada gramaticamente correto, será apresentado o significado da palavra em sua forma literal ou colocada em uma determinada frase. Se essa nova palavra tiver uma letra não preenchida antes, ela contará como pontuação no alfabeto. E assim, seguindo até que o alfabeto seja completo. 
+
 ### Mecânicas
 
 Regras e ações básicas.
+
+  - O objetivo principal do jogo é completar todas as letras do alfabeto atráves de palavras em inglês com apenas 3 letras.
+  - As ações permitidades ao jogador é: mudar uma das letras ou trocar a posição das letras.
+  - Para completar o objetivo, o jogador terá que ter um conhecimento básico da lingua inglesa, e a partir disso, se desafiar para melhorar o seu vocabulario.
 
 > **Trocar apenas uma letra por vez, ou inverter a palvra**
 
@@ -147,11 +153,20 @@ O comportamento emergente que surge da jogabilidade, quando as mecânicas são c
 
 > Descrição sobre como deve ficar as cenas dentro do jogo
 
+Ao decorrer que o jogador complete o desafio inicial com 3 letras, é disponiblizado um nível de dificuldade maior
+que será completar o mesmo objetivo porém com palavras de 4 letras. Aumentando a complexidade de desafio.
+
 ### Cenário 1
 
+ - 3 espaços sublinhados iniciando preenchidos pela palavra 'QAT'
 
 ### Cenário 2
 
+- 4 espaços sublinhados vazios.
+
+### Cenário 3
+
+- 5 espaços sublinhados vazios.
 
 ---
 
@@ -214,9 +229,13 @@ O comportamento emergente que surge da jogabilidade, quando as mecânicas são c
         - Definir tecnologias de servidor e banco de dados
         
 
-- **Vitor** - **Pedagogia**
-    - **Produtor(Exemplo)**
+- **Victor** - **Pedagogia e Tecnologia**
+    - **Produtor**
         - Feedback e melhorias contínuas
+    -  **Desenvolvedor**
+       -  Tecnologia de Back-end
+       -  Desenvolver endpoints usados no Front-end
+       -  Auxiliar na integração com o Front-end
         
 ---
 
