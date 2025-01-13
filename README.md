@@ -49,18 +49,23 @@
 > Para melhores soluções, vamos nos concentrar em responder algumas perguntas sobre isso...
 
 1. Como o jogo funciona?
+   - O jogador forma palavras em inglês, utilizando todas as letras do alfabeto. As palavras têm três letras na Fase 1, quatro letras na Fase 2 e cico letras na Fase 3. O jogador pode trocar ou reorganizar letras para criar novas palavras.
 
-2. Como o jogo se parece?
+2. Como o jogo se parece?<br/> 
+   - O jogo apresenta uma interface minimalista. O tabuleiro de entrada das palavras está centralizado e organizado. Além disso, a tela apresenta os indicadores visuais das letras usadas e das letras restantes, uma lista das palavras geradas e a quantidadew de palavras válidas formadas pelo jogador.
 
-3. Como o jogo será executado?
+3. Como o jogo será executado?<br/> 
+   - O jogo será disponibilizado em plataformas digitais como dispositivos móveis (iOS e Android) e computadores. Será jogado utilizando o touchscreen ou teclado e mouse para digitar e interagir com as letras e os demais recursos do jogo.
 
-4. Como o jogo será feito?
+4. Como o jogo será feito?<br/> 
 
 ---
 
 <h1 id="history">História</h1>
 
-> Já tentou lembrar de uma palavra e esteva na ponta da língua? Quem nunca tentou mudar um letra de cada vez para acertar a palavra certa? Agora você pode jogar e testar seus conhecimentos em inglês! Desafie seus amigos quem consegue formar as palavras mais rápido! 
+> Já tentou lembrar de uma palavra que estava na ponta da língua? Quem nunca tentou mudar um letra de cada vez para encontrar a palavra certa? Agora você pode jogar e testar seus conhecimentos em inglês! Desafie seus amigos para ver quem consegue formar as palavras mais rápido!
+> 
+> QAT é um jogo educativo, projetado para despertar o interesse pela língua inglesa e auxiliar no aprendizado do vocabulário. O foco é exclusivamente na experiência de formar palavras e aprimorar o conhecimento do idioma.
 
 ## Personagens
 
@@ -106,11 +111,11 @@
 
 - *Objetivo final*
 
-> Formar palavras, apartir de "**qat**", trocando apenas uma letra por vez. Começando por 3 letras, depois 4 letras, até 5 letras. Seja o mais astuto e ágil de cada categoria.
+> Formar palavras, a partir de "**qat**", trocando apenas uma letra por vez. Começando por 3 letras, depois 4 letras, até 5 letras. Seja o mais astuto e ágil de cada categoria.
 
 - *Pitch de venda*
 
-> Já tentou lembrar de uma palavra e esteva na ponta da língua? Quem nunca tentou mudar um letra de cada vez para acertar a palavra certa? Agora você pode jogar e testar seus conhecimentos em inglês! Desafie seus amigos quem consegue formar as palavras mais rápido! 
+> Já tentou se lembrar de uma palavra que estava na ponta da língua? Quem nunca tentou mudar um letra de cada vez para encontrar a palavra certa? Agora você pode jogar e testar seus conhecimentos em inglês! Desafie seus amigos para ver quem consegue formar as palavras mais rápido! 
 
 ---
 
@@ -123,15 +128,25 @@ O evento principal do jogo.
 
 > **Acertar palavaras até completar todas letras do alfabeto. Primeiro com 3, depois 4, até 5**
 
+Ao abrir o jogo, o jogador encontrará 3 linhas sublinhadas já preenchidas com as letras 'Q', 'A' e 'T'. O jogador poderá, então, modificar alguma dessas letras afim de formar uma nova palavra ou selecionar a randomização dessas 3 letras. A cada palavra formada gramaticamente correto, será apresentado o significado da palavra em sua forma literal ou colocada em uma determinada frase. Se essa nova palavra tiver uma letra não preenchida antes, ela contará como pontuação no alfabeto. E assim, seguindo até que o alfabeto seja completo. 
+
 ### Mecânicas
 
 Regras e ações básicas.
 
-> **Trocar apenas uma letra por vez, ou inverter a palvra**
+  - O objetivo principal do jogo é completar todas as letras do alfabeto atráves de palavras em inglês com apenas 3 letras.
+  - As ações permitidades ao jogador é: mudar uma das letras ou trocar a posição das letras.
+  - Para completar o objetivo, o jogador terá que ter um conhecimento básico da lingua inglesa, e a partir disso, se desafiar para melhorar o seu vocabulario.
+
+> **Trocar apenas uma letra por vez, ou inverter a palavra**
 
 ### Dinâmicas
 
 O comportamento emergente que surge da jogabilidade, quando as mecânicas são colocadas em uso.
+
+   - Os jogadores aprendem estratégias de formação de palavras, ao experimentarem diferntes combinações de letras;
+   - A troca e reorganizaçõ de letras promovem o pensamento criativo e a resolução de problemas;
+   - Os jogadores competem consigo mesmos e com outros players, para bater recordes anteriores de tempo, incentivando a repetição e o aprendizado constante.
 
 > **A**
 
@@ -147,11 +162,20 @@ O comportamento emergente que surge da jogabilidade, quando as mecânicas são c
 
 > Descrição sobre como deve ficar as cenas dentro do jogo
 
+Ao decorrer que o jogador complete o desafio inicial com 3 letras, é disponiblizado um nível de dificuldade maior
+que será completar o mesmo objetivo porém com palavras de 4 letras. Aumentando a complexidade de desafio.
+
 ### Cenário 1
 
+ - 3 espaços sublinhados iniciando preenchidos pela palavra 'QAT'
 
 ### Cenário 2
 
+- 4 espaços sublinhados vazios.
+
+### Cenário 3
+
+- 5 espaços sublinhados vazios.
 
 ---
 
@@ -210,13 +234,17 @@ O comportamento emergente que surge da jogabilidade, quando as mecânicas são c
   
 
 - **Thiago** - **Psicologia**
-    - **Desenvolvedor Estrutural(Exemplo)**
+    - **Desenvolvedor Estrutural**
         - Definir tecnologias de servidor e banco de dados
         
 
-- **Vitor** - **Pedagogia**
-    - **Produtor(Exemplo)**
+- **Victor** - **Pedagogia e Tecnologia**
+    - **Produtor**
         - Feedback e melhorias contínuas
+    -  **Desenvolvedor**
+       -  Tecnologia de Back-end
+       -  Desenvolver endpoints usados no Front-end
+       -  Auxiliar na integração com o Front-end
         
 ---
 
@@ -233,6 +261,10 @@ O comportamento emergente que surge da jogabilidade, quando as mecânicas são c
 
 - Data Inicial: 20/12
 - Data Prazo Final: 20/01
+- Planejamento: X dias ou até a data DD/MM/AAAA **(precisamos definir)**;
+- Desenvolvimento do protótipo: X dias, Y semanas ou até a data DD/MM/AAAA **(precisamos definir)**;
+- Testes e ajustes: X dias ou até a data DD/MM/AAAA **(precisamos definir)**;
+- Finalização e lançamento: X dias, Y semanas ou até a data DD/MM/AAAA **(precisamos definir)**.
 
 > 4 Semanas para entrega final e apresentação
 
@@ -288,7 +320,7 @@ npm install
 npm start
 ```
 
-- E para abrir o jogo, basta acessar o home.html no seu navegador apartir do [localhost](https://localhost:3000), por enquanto...
+- E para abrir o jogo, basta acessar o home.html no seu navegador a partir do [localhost](https://localhost:3000), por enquanto...
 - Bom jogo!
 
 [Voltar ao topo](#summary)
