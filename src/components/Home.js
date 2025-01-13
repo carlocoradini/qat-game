@@ -4,9 +4,9 @@ import { Link } from 'react-router-dom';
 const Home = () => {
 
   return (
-    <div>
-      <h1>Hello World</h1>
-      <Link to="/home">Home</Link>
+    <div className='container-xxl py-3 display--1'>
+      <h1>Welcome, user!</h1>
+      <Link to="/game">LINK</Link>
     </div>
   );
 };

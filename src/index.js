@@ -4,8 +4,7 @@ import ReactDOM from "react-dom/client";
 import "./index.css";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import reportWebVitals from './reportWebVitals';
-import 'bootstrap/dist/css/bootstrap.min.css';
-import 'bootstrap/dist/js/bootstrap.bundle.min.js';
+import 'bootstrap/scss/bootstrap.scss';
 
 
 // Componentes
@@ -13,6 +12,7 @@ import App from "./App";
 import ErrorPage from "./components/error/ErrorPage";
 import Home from "./components/Home";
 import Detail from "./components/Detail";
+import Game from "./components/Game";
 
 const router = createBrowserRouter([
     {
@@ -27,6 +27,10 @@ const router = createBrowserRouter([
         {
           path: "detail",
           element: <Detail />
+        },
+        {
+          path: "game",
+          element: <Game />
         },
       ],
     } 
