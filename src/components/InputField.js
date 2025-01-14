@@ -1,4 +1,4 @@
-import { useGameContext } from "./GameContext";
+import { useGameContext } from "../context/GameContext";
 import { WordChecker } from "./WordChecker"; // Importando o componente WordChecker
 
 export function InputField() {

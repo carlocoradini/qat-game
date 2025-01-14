@@ -10,9 +10,9 @@ import 'bootstrap/scss/bootstrap.scss';
 // Componentes
 import App from "./App";
 import ErrorPage from "./components/error/ErrorPage";
-import Home from "./components/Home";
+import Home from "./pages/Home";
 import Detail from "./components/Detail";
-import Game from "./components/Game";
+import Game from "./pages/Game";
 
 const router = createBrowserRouter([
     {

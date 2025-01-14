@@ -1,21 +1,26 @@
 import React from "react";
 import { Outlet } from "react-router-dom";
-import { Navbar } from "./components/Navbar";
-import { Footer } from "./components/Footer";
+import { Navbar } from "./layout/Navbar";
+import { Footer } from "./layout/Footer";
 
 import "./index.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap/dist/js/bootstrap.bundle.min.js";
+import { AuthProvider } from "./context/AuthContext";
+import { GameProvider } from "./context/GameContext";
+import Game from "./pages/Game";
 
 function App() {
   return (
-
-      <div className="App mx-4">
-        <Navbar />
-        <Outlet />
-        <Footer />
-      </div>
-
+    <AuthProvider>
+      <GameProvider>
+        <div className="App mx-4">
+          <Navbar />
+          <Outlet />
+          <Footer />
+        </div>
+      </GameProvider>
+    </AuthProvider>
   );
 }
 

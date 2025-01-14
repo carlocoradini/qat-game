@@ -1,7 +1,7 @@
 import React from "react";
-import { GameProvider } from "./GameContext";
-import { InputField } from "./InputField";
-import { Keyboard } from "./Keyboard";
+import { GameProvider } from "../context/GameContext";
+import { InputField } from "../components/InputField";
+import { Keyboard } from "../components/Keyboard";
 
 const Game = () => {
   return (

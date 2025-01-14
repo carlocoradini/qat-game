@@ -1,5 +1,5 @@
 import React from "react";
-import { useGameContext } from "./GameContext";
+import { useGameContext } from "../context/GameContext";
 
 export function Keyboard() {
   const { usedLetters, currentLetters, updateLetters } = useGameContext();

@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { useGameContext } from "./GameContext";
+import { useGameContext } from "../context/GameContext";
 import axios from "axios";
 
 // URL da API Datamuse para verificar palavras
