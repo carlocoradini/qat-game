@@ -2,7 +2,7 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 import "./index.css";
-import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import { createBrowserRouter, Navigate, RouterProvider } from "react-router-dom";
 import reportWebVitals from './reportWebVitals';
 import 'bootstrap/scss/bootstrap.scss';
 
@@ -20,6 +20,10 @@ const router = createBrowserRouter([
       element: <App />,
       errorElement: <ErrorPage />,
       children: [
+        {
+          index: true,
+          element: <Navigate to="home" replace />
+        },
         {
           path: "home",
           element: <Home />

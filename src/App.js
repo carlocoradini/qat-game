@@ -16,7 +16,7 @@ function App() {
       <GameProvider>
         <div className="App mx-4">
           <Navbar />
-          <Outlet />
+          <Outlet  />
           <Footer />
         </div>
       </GameProvider>
