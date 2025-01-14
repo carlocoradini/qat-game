@@ -3,7 +3,7 @@ import { useGameContext } from "../context/GameContext";
 import axios from "axios";
 
 // URL da API Datamuse para verificar palavras
-const API_URL = "https://api.datamuse.com/words";
+const BASE_URL = "https://api.dictionaryapi.dev/api/v2/entries/en";
 
 export function WordChecker() {
   const { currentLetters, addUsedLetters } = useGameContext();
@@ -12,12 +12,7 @@ export function WordChecker() {
   // Função para verificar a palavra com a API Datamuse
   const checkWordValidity = async (word) => {
     try {
-      const response = await axios.get(API_URL, {
-        params: {
-          sp: word,  // sp indica a palavra que queremos procurar
-          max: 1     // Limita a resposta a 1 palavra
-        }
-      });
+      const response = await axios.get(`${BASE_URL}/${word}`);
 
       // Se a palavra existir, ela será retornada na lista
       if (response.data.length > 0) {

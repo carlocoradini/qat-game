@@ -12,17 +12,17 @@ export function Footer() {
             <ul className="mx-4 nav col-md-4 justify-content-end list-unstyled d-flex margin-right">
                 <li className="ms-3">
                     <a className="text-muted" href="#">
-                        <img src="imgs/twitter.png" width="24" height="24" alt="Twitter" />
+                        <i class="bi bi-youtube"></i>
                     </a>
                 </li>
                 <li className="ms-3">
                     <a className="text-muted" href="#">
-                        <img src="imgs/github.png" width="24" height="24" alt="Github" />
+                        <i class="bi bi-github"></i>
                     </a>
                 </li>
                 <li className="ms-3">
                     <a className="text-muted" href="#">
-                        <img src="imgs/discord.png" width="24" height="24" alt="Discord" />
+                        <i class="bi bi-discord"></i>
                     </a>
                 </li>
             </ul>

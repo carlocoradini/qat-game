@@ -1,15 +1,31 @@
+import React, { useEffect, useState } from "react";
 import { useGameContext } from "../context/GameContext";
-import { WordChecker } from "./WordChecker"; // Importando o componente WordChecker
+import { WordChecker } from "./WordChecker";
 
 export function InputField() {
-  const { currentLetters, setCurrentLetters, addUsedLetters } = useGameContext();
-  
-  // Função para trocar uma letra
-  const handleChangeLetter = (index, newLetter) => {
-    const updatedLetters = [...currentLetters];
-    updatedLetters[index] = newLetter; // Atualiza a letra na posição especificada
-    setCurrentLetters(updatedLetters);
+  const { currentLetters, updateLetters } = useGameContext();
+  const [selectedIndex, setSelectedIndex] = useState(0);
+
+  // Função para trocar a letra no índice selecionado
+  const handleLetterChange = (newLetter) => {
+    updateLetters(newLetter.toUpperCase(), selectedIndex);
   };
+
+  // Lidar com as teclas do teclado físico
+  const handleKeyDown = (e) => {
+    if (e.key === "ArrowRight") {
+      setSelectedIndex((prev) => (prev + 1) % currentLetters.length);
+    } else if (e.key === "ArrowLeft") {
+      setSelectedIndex((prev) => (prev - 1 + currentLetters.length) % currentLetters.length);
+    } else if (/^[a-zA-Z]$/.test(e.key)) {
+      handleLetterChange(e.key);
+    }
+  };
+
+  useEffect(() => {
+    document.addEventListener("keydown", handleKeyDown);
+    return () => document.removeEventListener("keydown", handleKeyDown);
+  }, [selectedIndex, currentLetters]);
 
   return (
     <div>
@@ -20,14 +36,14 @@ export function InputField() {
             type="text"
             value={letter}
             maxLength="1"
-            onChange={(e) => handleChangeLetter(index, e.target.value.toUpperCase())} // Garante letras maiúsculas
-            className="letter-input"
+            readOnly // Impede edição direta
+            className={`letter-input ${index === selectedIndex ? "selected" : ""}`} // Estilo para o campo selecionado
+            onClick={() => setSelectedIndex(index)} // Clique no campo para selecioná-lo
           />
         ))}
       </div>
 
-      {/* Verificando a palavra sempre que as letras mudam */}
-      <WordChecker validateWord={addUsedLetters} />  {/* Ou você pode passar a função diretamente */}
+      <WordChecker />
     </div>
   );
 }

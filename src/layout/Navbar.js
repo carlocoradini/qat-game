@@ -1,3 +1,5 @@
+import logo from "../assets/download.png"
+
 export function Navbar() {
 
   return (
@@ -7,7 +9,7 @@ export function Navbar() {
           href="/home"
           className="d-flex align-items-center col-md-3 mb-2 mb-md-0 text-dark text-decoration-none"
         >
-          <img className="logo" src="imgs/logo.png" alt="Logo" />
+          <img src={logo} className='w-25 h-25 mx-auto d-block' alt="Logo"/>
           <h1>QAT - The game</h1>
         </a>
 
@@ -23,8 +25,8 @@ export function Navbar() {
             </a>
           </li>
           <li>
-            <a href="/detail" className="nav-link px-2 link-white">
-              ALGO
+            <a href="/login" className="nav-link px-2 link-white">
+              LOGIN
             </a>
           </li>
         </ul>
