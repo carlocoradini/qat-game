@@ -8,7 +8,6 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap/dist/js/bootstrap.bundle.min.js";
 import { AuthProvider } from "./context/AuthContext";
 import { GameProvider } from "./context/GameContext";
-import Game from "./pages/Game";
 
 function App() {
   return (
