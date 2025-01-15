@@ -1,0 +1,14 @@
+* {
+  font-family: "Bebas Neue", serif;
+  font-weight: 300;
+  font-optical-sizing: unset;
+  font-style: normal;
+  font-size: x-large;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+
