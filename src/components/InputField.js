@@ -1,10 +1,26 @@
 import React, { useEffect, useState } from "react";
 import { useGameContext } from "../context/GameContext";
 import { WordChecker } from "./WordChecker";
+import { checkWordValidity } from "../services/wordService";
 
 export function InputField() {
-  const { currentLetters, updateLetters } = useGameContext();
+  const { currentLetters, updateLetters, addUsedLetters, setWordInfo, addValidWord } = useGameContext();
   const [selectedIndex, setSelectedIndex] = useState(0);
+  const [ inputValid, setInputValid ] = useState(false)
+
+  const checkWord = async () => {
+    const word = currentLetters.join("")
+    if(word.length === 3){
+      const result = await checkWordValidity(word)
+      setInputValid(result.isValid)
+      if(result.isValid){
+        addUsedLetters(currentLetters)
+        setWordInfo(result.word, result.audio, result.definition)
+        addValidWord(word)
+        // aqui atualizo o contexto com as inforamções
+      }
+    }
+  }
 
   // Função para trocar a letra no índice selecionado
   const handleLetterChange = (newLetter) => {
@@ -23,6 +39,20 @@ export function InputField() {
   };
 
   useEffect(() => {
+    checkWord()
+  }, [currentLetters])
+
+  useEffect(() => {
+    if (inputValid !== null) { // Se já foi validado
+      const timer = setTimeout(() => {
+        setInputValid(null); // Remove a classe após 1 segundo
+      }, 1000);
+
+      return () => clearTimeout(timer); // Limpa o timer se o componente for desmontado ou se o inputValid mudar
+    }
+  }, [inputValid]); // Este efeito depende de `inputValid`
+
+  useEffect(() => {
     document.addEventListener("keydown", handleKeyDown);
     return () => document.removeEventListener("keydown", handleKeyDown);
   }, [selectedIndex, currentLetters]);
@@ -37,13 +67,13 @@ export function InputField() {
             value={letter}
             maxLength="1"
             readOnly // Impede edição direta
-            className={`letter-input ${index === selectedIndex ? "selected" : ""}`} // Estilo para o campo selecionado
+            className={`letter-input ${index === selectedIndex ? "selected" : ""} 
+            ${inputValid === true ? "valid" : inputValid === false ? "invalid" : ""}`} // Estilo para o campo selecionado
             onClick={() => setSelectedIndex(index)} // Clique no campo para selecioná-lo
           />
         ))}
       </div>
 
-      <WordChecker />
     </div>
   );
 }

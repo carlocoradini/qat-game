@@ -19,6 +19,16 @@
     border-color: #007bff;
     background-color: #e7f1ff;
   }
+
+  .letter-input.valid {
+    border-color: green;
+    background-color: #d4f7d4; /* Cor verde para indicar validade */
+  }
+  
+  .letter-input.invalid {
+    border-color: red;
+    background-color: #f7d4d4; /* Cor vermelha para indicar invalidez */
+  }
   
   .word-list {
     display: flex;
