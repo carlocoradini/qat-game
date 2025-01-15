@@ -1,16 +1,18 @@
 {
   "files": {
-    "main.css": "/static/css/main.84c7a048.css",
-    "main.js": "/static/js/main.c201e4a9.js",
-    "static/js/453.97b9bfa1.chunk.js": "/static/js/453.97b9bfa1.chunk.js",
-    "static/media/download.png": "/static/media/download.7cc278ab768d621914ae.png",
-    "index.html": "/index.html",
-    "main.84c7a048.css.map": "/static/css/main.84c7a048.css.map",
-    "main.c201e4a9.js.map": "/static/js/main.c201e4a9.js.map",
-    "453.97b9bfa1.chunk.js.map": "/static/js/453.97b9bfa1.chunk.js.map"
+    "main.css": "/qat-game/static/css/main.a5c602f3.css",
+    "main.js": "/qat-game/static/js/main.35db3135.js",
+    "static/js/453.97b9bfa1.chunk.js": "/qat-game/static/js/453.97b9bfa1.chunk.js",
+    "static/media/download.png": "/qat-game/static/media/download.7cc278ab768d621914ae.png",
+    "index.html": "/qat-game/index.html",
+    "static/media/microphone-slash-solid.svg": "/qat-game/static/media/microphone-slash-solid.98e0611fe9084d2f01a2ab812ff65851.svg",
+    "static/media/microphone-solid.svg": "/qat-game/static/media/microphone-solid.ff4fd34374f38912ee549401cf8f600a.svg",
+    "main.a5c602f3.css.map": "/qat-game/static/css/main.a5c602f3.css.map",
+    "main.35db3135.js.map": "/qat-game/static/js/main.35db3135.js.map",
+    "453.97b9bfa1.chunk.js.map": "/qat-game/static/js/453.97b9bfa1.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.84c7a048.css",
-    "static/js/main.c201e4a9.js"
+    "static/css/main.a5c602f3.css",
+    "static/js/main.35db3135.js"
   ]
 }
