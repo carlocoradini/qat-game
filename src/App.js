@@ -13,7 +13,7 @@ function App() {
   return (
     <AuthProvider>
       <GameProvider>
-        <div className="App mx-4">
+        <div className="App">
           <Navbar />
           <Outlet  />
           <Footer />

@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from "react";
 import { useGameContext } from "../context/GameContext";
-import { WordChecker } from "./WordChecker";
 import { checkWordValidity } from "../services/wordService";
 
 export function InputField() {
@@ -10,30 +9,30 @@ export function InputField() {
     addUsedLetters,
     setWordInfo,
     addValidWord,
+    currentPhase, // Pegue o valor da fase atual
+    wordLength, // Esse é o comprimento da palavra para a fase atual
   } = useGameContext();
+  
   const [selectedIndex, setSelectedIndex] = useState(0);
-  const [inputValid, setInputValid] = useState(false);
+  const [inputValid, setInputValid] = useState(null);
 
   const checkWord = async () => {
     const word = currentLetters.join("");
-    if (word.length === 3) {
+    if (word.length === wordLength) { // Agora usamos o `wordLength` da fase
       const result = await checkWordValidity(word);
       setInputValid(result.isValid);
       if (result.isValid) {
         addUsedLetters(currentLetters);
         setWordInfo(result.word, result.audio, result.definition);
         addValidWord(word);
-        // aqui atualizo o contexto com as inforamções
       }
     }
   };
 
-  // Função para trocar a letra no índice selecionado
   const handleLetterChange = (newLetter) => {
     updateLetters(newLetter.toUpperCase(), selectedIndex);
   };
 
-  // Lidar com as teclas do teclado físico
   const handleKeyDown = (e) => {
     if (e.key === "ArrowRight") {
       setSelectedIndex((prev) => (prev + 1) % currentLetters.length);
@@ -52,19 +51,27 @@ export function InputField() {
 
   useEffect(() => {
     if (inputValid !== null) {
-      // Se já foi validado
       const timer = setTimeout(() => {
-        setInputValid(null); // Remove a classe após 1 segundo
+        setInputValid(null);
       }, 1000);
-
-      return () => clearTimeout(timer); // Limpa o timer se o componente for desmontado ou se o inputValid mudar
+      return () => clearTimeout(timer);
     }
-  }, [inputValid]); // Este efeito depende de `inputValid`
+  }, [inputValid]);
 
   useEffect(() => {
     document.addEventListener("keydown", handleKeyDown);
     return () => document.removeEventListener("keydown", handleKeyDown);
   }, [selectedIndex, currentLetters]);
+
+  // Ajusta o número de letras com base na fase atual
+  useEffect(() => {
+    if (currentPhase > 0) {
+      // Alterar a quantidade de letras conforme a fase
+      // Para fase 1, 3 letras, para fase 2, 4 letras, para fase 3, 5 letras, etc.
+      const newLetters = Array(wordLength).fill("Q"); // Palavra com o número correto de letras
+      updateLetters(newLetters);  // Atualiza as letras no estado
+    }
+  }, [currentPhase, wordLength]);
 
   return (
     <div>
@@ -75,18 +82,10 @@ export function InputField() {
             type="text"
             value={letter}
             maxLength="1"
-            readOnly // Impede edição direta
-            className={`letter-input ${
-              index === selectedIndex ? "selected" : ""
-            } 
-            ${
-              inputValid === true
-                ? "valid"
-                : inputValid === false
-                ? "invalid"
-                : ""
-            }`} // Estilo para o campo selecionado
-            onClick={() => setSelectedIndex(index)} // Clique no campo para selecioná-lo
+            readOnly
+            className={`letter-input ${index === selectedIndex ? "selected" : ""} 
+            ${inputValid === true ? "valid" : inputValid === false ? "invalid" : ""}`}
+            onClick={() => setSelectedIndex(index)}
           />
         ))}
       </div>
