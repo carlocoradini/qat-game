@@ -64,4 +64,5 @@ reportWebVitals();
     </AuthContextProvider>
   </React.StrictMode>
   No caso de precisarmos de context;
+<<<<<<< HEAD
  */
