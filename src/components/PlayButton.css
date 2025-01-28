@@ -1,0 +1,54 @@
+/* Centraliza o botão e estiliza a largura e altura */
+.btn-play {
+    font-size: 1.5rem;
+    font-weight: bold;
+    padding: 15px 30px;
+    border-radius: 50px;
+    background: linear-gradient(45deg, #007bff, #6610f2);
+    color: white;
+    border: none;
+    transition: all 0.3s ease-in-out;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    position: relative;
+    overflow: hidden;
+}
+
+/* Efeito de hover */
+.btn-play:hover {
+    background: linear-gradient(45deg, #6610f2, #007bff);
+    transform: scale(1.1);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4);
+}
+
+/* Efeito de brilho */
+.btn-play:before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 300%;
+    height: 300%;
+    background: rgba(255, 255, 255, 0.2);
+    transform: translate(-50%, -50%) rotate(45deg);
+    transition: opacity 0.3s ease-in-out;
+    opacity: 0;
+}
+
+/* Exibe o brilho no hover */
+.btn-play:hover:before {
+    opacity: 1;
+    animation: shine 0.8s ease-in-out infinite;
+}
+
+/* Animação de brilho */
+@keyframes shine {
+    0% {
+        transform: translate(-50%, -50%) rotate(45deg) scale(1);
+    }
+    50% {
+        transform: translate(-50%, -50%) rotate(45deg) scale(1.2);
+    }
+    100% {
+        transform: translate(-50%, -50%) rotate(45deg) scale(1);
+    }
+}
