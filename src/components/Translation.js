@@ -12,11 +12,13 @@ export default function Translation() {
             if(wordData.word){
                 const wordTranslated = await translateText(wordData.word);
                 setWordTranslation(wordTranslated)
+                //setWordTranslation(wordData.word)
             }
 
             if(wordData.definition) {
                 const sentenceTranslated = await translateText(wordData.definition)
                 setSentenceTranslation(sentenceTranslated)
+                //setSentenceTranslation(wordData.definition)
             }
         }
 

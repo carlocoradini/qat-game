@@ -6,7 +6,7 @@ export default function SwapLetter(){
     return (
         <>
             <div className="word-list">
-                <h3>Swapping letters</h3>
+                <h3>Troca de letras</h3>
             <p>{lettersSwap}</p>
             </div>
         </>
