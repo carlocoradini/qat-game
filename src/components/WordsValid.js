@@ -6,7 +6,7 @@ export default function WordsValid(){
 
     return (
         <div className="word-list">
-            <h3>Palavras validas</h3>
+            <h3>Valid Words</h3>
             <ul>
                 {validWords.map((word, index) => (
                 <li key={index}>{word}</li>

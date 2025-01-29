@@ -29,20 +29,37 @@ const Game = () => {
   }, [gameHistory]);
 
   return (
-    <div className="game text-center py-3">
+    <div className="game container-fluid text-center py-3">
       {gameOver ? (
         <FinalReport />
       ) : (
         <>
-          <InputField wordLength={wordLength} />
-          <WordList />
-          <AudioPlayer />
-          <WordPhoto />
-          <Keyboard />
+          <div className="row align-items-center">
+            <div className="col-md-3 d-flex flex-column align-items-center">
+              <div>
+                <SwapLetter />
+              </div>
+            </div>
+            <div className="col-md-6 d-flex flex-column align-items-center">
+              <div className="mb-3">
+                <Keyboard />
+              </div>
+              <div>
+                <InputField wordLength={wordLength} />
+              </div>
+              <div>
+                <AudioPlayer />
+                <WordPhoto />
+                <Translation />
+              </div>
+            </div>
+            <div className="col-md-3 d-flex flex-column align-items-center">
+              <div>
+                <WordsValid />
+              </div>
+            </div>
+          </div>
           <VictoryModal />
-          <Translation />
-          <SwapLetter />
-          <WordsValid />
         </>
       )}
     </div>

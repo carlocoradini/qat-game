@@ -30,7 +30,7 @@ export function InputField() {
   };
 
   const handleLetterChange = (newLetter) => {
-    updateLetters(newLetter.toUpperCase(), selectedIndex);
+      updateLetters(newLetter.toUpperCase(), selectedIndex);
   };
 
   const handleKeyDown = (e) => {
@@ -63,15 +63,7 @@ export function InputField() {
     return () => document.removeEventListener("keydown", handleKeyDown);
   }, [selectedIndex, currentLetters]);
 
-  // Ajusta o número de letras com base na fase atual
-  useEffect(() => {
-    if (currentPhase > 0) {
-      // Alterar a quantidade de letras conforme a fase
-      // Para fase 1, 3 letras, para fase 2, 4 letras, para fase 3, 5 letras, etc.
-      const newLetters = Array(wordLength).fill("Q"); // Palavra com o número correto de letras
-      updateLetters(newLetters);  // Atualiza as letras no estado
-    }
-  }, [currentPhase, wordLength]);
+
 
   return (
     <div>

@@ -11,6 +11,10 @@ export function GameProvider({ children }) {
     audio: "",
     definition: ""
   });
+
+  const [gameMode, setGameMode] = useState("Classic");
+  const [gameTime, setGameTime] = useState(null);
+
   const [lettersSwap, setLettersSwap] = useState(0);
   const [validWords, setValidWords] = useState([]);
 
@@ -21,11 +25,21 @@ export function GameProvider({ children }) {
   const [gameHistory, setGameHistory] = useState([]); 
   const [currentPhase, setCurrentPhase] = useState(1);  // Controle da fase
 
+  useEffect(() => {
+    if(wordLength === 4)
+      setCurrentLetters(["Q", "U", "I", "Z"])
+    else if (wordLength === 3)
+      setCurrentLetters(["Q", "A","T"])
+    else if(wordLength === 5)
+      setCurrentLetters(["G", "L", "Y", "P", "H"])
+  }, [wordLength])
+
   const updateLetters = (newLetter, index) => {
     if (index < wordLength) {
       const updated = [...currentLetters];
       updated[index] = newLetter;
       setCurrentLetters(updated);
+      setLettersSwap((prev) => prev + 1)
     }
   };
 
@@ -57,7 +71,7 @@ export function GameProvider({ children }) {
     if (currentPhase < 3) {
       setCurrentPhase((prev) => prev + 1);
       setWordLength((prev) => prev + 1);  // Aumenta o número de letras da palavra
-      setCurrentLetters(new Array(wordLength).fill("")); // Reinicia as letras para a nova fase
+      //setCurrentLetters(new Array(wordLength).fill("")); // Reinicia as letras para a nova fase
     } else {
       console.log("Jogo concluído!");
     }
@@ -68,7 +82,9 @@ export function GameProvider({ children }) {
       value={{
         currentLetters, usedLetters, updateLetters, addUsedLetters, gameStartTime,
         wordLength, setWordLength, addPhaseStats, wordData, lettersSwap, validWords,
-        setWordInfo, addValidWord, currentPhase, nextPhase, gameHistory, setCurrentPhase
+        setWordInfo, addValidWord, currentPhase, nextPhase, gameHistory, setCurrentPhase,
+        gameMode, setGameMode,
+        gameTime, setGameTime,
       }}
     >
       {children}

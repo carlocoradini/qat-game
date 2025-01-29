@@ -1,10 +1,19 @@
-import React from "react";
+import React, { useState } from "react";
 import { useGameContext } from "../context/GameContext";
+import { useNavigate } from "react-router-dom";
+import GameSettingsModal from "./GameSettingsModal";
 
 export function FinalReport() {
   const { gameHistory } = useGameContext();
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const navigate = useNavigate()
 
   if (!gameHistory || gameHistory.length === 0) return null;
+  
+  const handleStartGame  = () => {
+    setIsModalOpen(false); // Fecha o modal
+    navigate("/game")
+  }
 
   return (
     <div className="final-report">
@@ -19,7 +28,8 @@ export function FinalReport() {
           </li>
         ))}
       </ul>
-      <button onClick={() => window.location.reload()}>Reiniciar Jogo</button>
+      <button onClick={() => setIsModalOpen(true)}>Reiniciar Jogo</button>
+      {isModalOpen && <GameSettingsModal onClose={() => setIsModalOpen(false)} onStartGame={handleStartGame} />}
     </div>
   );
 }
